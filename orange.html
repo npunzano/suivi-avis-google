@@ -1,11 +1,11 @@
 <!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><title>Pick & Smile — Suivi des avis Google</title></head><body><script>
-fetch('https://raw.githubusercontent.com/npunzano/suivi-avis-google/main/index.html?v=20261029-nav2',{cache:'no-store'})
+fetch('https://raw.githubusercontent.com/npunzano/suivi-avis-google/main/index.html?v=20261029-nav3',{cache:'no-store'})
 .then(r=>{if(!r.ok) throw new Error('Chargement impossible'); return r.text()})
 .then(html=>{
 html=html.replace(/--series-defense:\s*#[0-9A-Fa-f]{6}\s*;/i,'--series-defense: #FF5A00;');
   if (!html.includes('class="site-nav"')) {
     const nav='<nav class="site-nav" aria-label="Navigation principale"><a class="nav-home" href="#top">PICK &amp; SMILE · Avis Google</a><a href="#overview">Vue d’ensemble</a><a href="#locations">Établissements</a><a href="#ratings">Notes</a><a href="#reviews">Nombre d’avis</a><a href="#progression">Progression</a><a href="#history">Historique</a></nav>';
-    html=html.replace('</style>',' .site-nav{position:sticky;top:0;z-index:9999;display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:12px 18px;background:#fff;border-bottom:2px solid #FF6A00;box-shadow:0 4px 14px #0002}.site-nav a{padding:9px 12px;border-radius:8px;color:#252039;text-decoration:none;font:700 13px Arial,sans-serif}.site-nav a:hover{background:#fff0e6;color:#FF6A00}</style>');
+    html=html.replace('</style>',' .site-nav{position:fixed;top:0;left:0;right:0;z-index:9999;display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:12px 18px;background:#fff;border-bottom:2px solid #FF6A00;box-shadow:0 4px 14px #0002}.site-nav a{padding:9px 12px;border-radius:8px;color:#252039;text-decoration:none;font:700 13px Arial,sans-serif}.site-nav a:hover{background:#fff0e6;color:#FF6A00}body{padding-top:66px!important}@media(max-width:650px){.site-nav{gap:3px;padding:8px 10px}.site-nav a{padding:7px 8px;font-size:11px}}</style>');
     html=html.replace('<body>','<body>'+nav);
   }
   document.open();document.write(html);document.close();
