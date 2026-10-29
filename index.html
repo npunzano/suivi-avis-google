@@ -69,6 +69,7 @@ a:focus-visible {
   padding: calc(28px * var(--site-spacing-scale)) clamp(18px, 3.2vw, 46px) calc(44px * var(--site-spacing-scale));
 }
 
+.site-nav{position:sticky;top:8px;z-index:100;display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:0 0 22px;padding:9px;border:1px solid var(--border-color);border-radius:16px;background:var(--surface);box-shadow:var(--shadow-soft)}.site-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:9px 12px;border-radius:10px;color:var(--text-muted);text-decoration:none;font-size:13px;font-weight:750;white-space:nowrap}.site-nav a:hover,.site-nav a:focus-visible{background:var(--surface-soft);color:var(--site-primary)}.site-nav .nav-home{margin-right:auto;color:var(--site-primary);font-weight:900}@media(max-width:650px){.site-nav{top:4px;gap:3px}.site-nav a{padding:8px;font-size:12px}.site-nav .nav-home{width:100%;justify-content:flex-start;margin:0}}.section{scroll-margin-top:100px}
 .hero {
   position: relative;
   isolation: isolate;
@@ -948,7 +949,7 @@ footer strong {
 </head>
 <body>
 <div class="app-root">
-  <main class="container">
+  <main class="container" id="top">
     <header class="hero">
       <div>
         <div class="brand">
@@ -977,8 +978,9 @@ footer strong {
         </div>
       </aside>
     </header>
+    <nav class="site-nav" aria-label="Navigation principale"><a class="nav-home" href="#top">PICK &amp; SMILE · Avis Google</a><a href="#overview">Vue d’ensemble</a><a href="#locations">Établissements</a><a href="#ratings">Notes</a><a href="#reviews">Nombre d’avis</a><a href="#progression">Progression</a><a href="#history">Historique</a></nav>
 
-    <section class="section" aria-labelledby="overview-title">
+    <section id="overview" class="section" aria-labelledby="overview-title">
       <div class="section-heading">
         <div>
           <div class="kicker">Vue d'ensemble</div>
@@ -989,7 +991,7 @@ footer strong {
       <div class="kpi-grid" id="kpiGrid"></div>
     </section>
 
-    <section class="section" aria-labelledby="locations-title">
+    <section id="locations" class="section" aria-labelledby="locations-title">
       <div class="section-heading">
         <div>
           <div class="kicker">Les établissements</div>
@@ -1000,7 +1002,7 @@ footer strong {
       <div class="location-grid" id="locationGrid"></div>
     </section>
 
-    <section class="section" aria-labelledby="rating-title">
+    <section id="ratings" class="section" aria-labelledby="rating-title">
       <div class="section-heading">
         <div>
           <div class="kicker">01 / Satisfaction</div>
@@ -1029,7 +1031,7 @@ footer strong {
       </div>
     </section>
 
-    <section class="section" aria-labelledby="reviews-title">
+    <section id="reviews" class="section" aria-labelledby="reviews-title">
       <div class="section-heading">
         <div>
           <div class="kicker">02 / Volume</div>
@@ -1057,7 +1059,7 @@ footer strong {
       </div>
     </section>
 
-    <section class="section two-column" aria-label="Progression et analyse">
+    <section id="progression" class="section two-column" aria-label="Progression et analyse">
       <div class="chart-panel">
         <div class="kicker">03 / Performance</div>
         <h2>Les avis gagnés depuis S23</h2>
@@ -1071,7 +1073,7 @@ footer strong {
       </div>
     </section>
 
-    <section class="section" aria-labelledby="data-title">
+    <section id="history" class="section" aria-labelledby="data-title">
       <div class="section-heading">
         <div>
           <div class="kicker">Données détaillées</div>
